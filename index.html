@@ -68,18 +68,40 @@ body:after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;back
 @media(max-width:850px){.case-layout{grid-template-columns:1fr}.case-header{display:block}.case-industry{display:block;text-align:left;margin-top:12px}.case-detail{padding:18px}}
 @media(max-width:760px){.plant-pill{font-size:9px}.industrial-status{gap:10px}.hero-float{font-size:10px}.case-studies{padding-top:40px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}[data-reveal]{opacity:1!important;transform:none!important}}
+
+/* V3.1: full-width sticky navbar with properly inset inner content */
+.nav{width:100%;max-width:none;margin:0;left:0;right:0;padding:0;min-height:76px;background:rgba(7,16,21,.96);border-bottom:1px solid rgba(87,214,197,.14);box-shadow:0 5px 24px rgba(0,0,0,.18);box-sizing:border-box}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:30px;min-height:76px;padding-inline:clamp(22px,3vw,38px)}
+.nav .brand{flex:0 0 auto;font-size:18px;letter-spacing:.085em;white-space:nowrap}
+.navlinks{display:flex;align-items:center;justify-content:flex-end;gap:clamp(19px,2.3vw,36px);min-width:0}
+.navlinks a{font-size:14px;white-space:nowrap;letter-spacing:.015em}
+.navlinks a:hover{color:var(--teal)}
+.navlinks .nav-github{border:1px solid rgba(87,214,197,.4);color:var(--teal);padding:9px 16px;border-radius:9px;transition:background .2s,border-color .2s}
+.navlinks .nav-github:hover{background:rgba(87,214,197,.12);border-color:var(--teal)}
+@media (max-width:850px){
+ .nav-inner{min-height:68px;padding-inline:20px}
+ .navlinks{display:none;position:absolute;top:68px;left:12px;right:12px;flex-direction:column;align-items:stretch;gap:0;max-height:calc(100vh - 80px);overflow:auto;padding:8px;border-radius:14px;background:#0b1920;border:1px solid #28515b;box-shadow:0 20px 40px rgba(0,0,0,.4)}
+ .navlinks.open{display:flex}
+ .navlinks a{display:block;padding:13px 15px}
+ .navlinks .nav-github{margin:5px;border-radius:9px;text-align:center}
+ .nav .menu{display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;cursor:pointer}
+}
+@media(max-width:420px){.nav .brand{font-size:16px}}
+
 </style>
 <meta content="Mario Paolantonio | Full Stack Engineer — Industrial Software" property="og:title"/><meta content="Four production systems, full-stack software and industrial business impact." property="og:description"/><meta content="website" property="og:type"/><meta content="https://mariopao14.github.io/assets/portfolio.jpg" property="og:image"/><meta content="index, follow" name="robots"/><link href="https://mariopao14.github.io/" rel="canonical"/></head>
 <body>
-<nav class="nav wrap">
+<nav class="nav" aria-label="Main navigation">
+<div class="nav-inner wrap">
 <a class="brand" href="#top">MARIO<span> / DEV</span></a>
 <div class="navlinks" id="navlinks">
 <a href="#projects">Projects</a>
 <a href="#stack">Stack</a>
 <a href="#about">About</a>
-<a href="https://github.com/MarioPao14" rel="noopener" target="_blank">GitHub ↗</a>
+<a class="nav-github" href="https://github.com/MarioPao14" rel="noopener" target="_blank">GitHub ↗</a>
 </div>
-<button aria-expanded="false" class="menu" id="menu">Menu</button>
+<button aria-expanded="false" aria-controls="navlinks" aria-label="Toggle navigation" class="menu" id="menu">☰ Menu</button>
+</div>
 </nav>
 <main class="wrap" id="top">
 <section class="hero">
