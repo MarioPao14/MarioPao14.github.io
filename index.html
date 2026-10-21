@@ -88,6 +88,37 @@ body:after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;back
 }
 @media(max-width:420px){.nav .brand{font-size:16px}}
 
+
+/* V3.2 — immersive industrial landscape and coded production console */
+.nav{z-index:70}
+.hero{width:100vw;max-width:none;margin-inline:calc(50% - 50vw);padding:92px max(32px,calc((100vw - 1180px)/2)) 80px;min-height:695px;position:relative;isolation:isolate;display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(28px,5vw,75px);align-items:center;overflow:hidden;border-bottom:1px solid #33515a}
+.hero:before{content:"";position:absolute;inset:0;z-index:-3;background:url("assets/portfolio.jpg") 95% 18% / 170% auto no-repeat;filter:saturate(1.25) contrast(1.18) brightness(.8);transform:scale(1.035);animation:scene-arrive 1.7s ease-out both}
+.hero:after{content:"";position:absolute;inset:0;z-index:-2;pointer-events:none;background:linear-gradient(90deg,rgba(4,12,16,.98),rgba(4,12,16,.90) 25%,rgba(4,12,16,.68) 55%,rgba(4,12,16,.35)),linear-gradient(0deg,rgba(4,12,16,.86),transparent 65%)}
+.hero>div{position:relative;z-index:2;min-width:0}
+.hero h1{font-size:clamp(48px,5.2vw,78px);line-height:1.05;text-shadow:0 2px 18px #0005}
+.hero .lead{font-size:17px;line-height:1.75;max-width:630px}
+.hero .actions{margin:26px 0 28px}
+.hero .stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px}
+.hero .stat{padding:13px 10px;border-radius:12px;background:#091b24b9;border:1px solid #86dacc29;backdrop-filter:blur(7px)}
+.hero .stat strong{font-size:clamp(22px,2.1vw,31px);color:#e6fffa}
+.hero .stat small{font-size:10px;display:block;line-height:1.4}
+.hero-console{border-radius:21px;border:1px solid #68cecb47;background:#08161dc2;box-shadow:0 20px 65px #0006;backdrop-filter:blur(16px);padding:22px;max-width:440px;justify-self:end;animation:console-glow 7s ease-in-out infinite}
+.console-title{display:flex;align-items:center;gap:10px;color:#91f0e4;font:700 10px "Space Grotesk";letter-spacing:.13em;padding-bottom:16px;border-bottom:1px solid #9ce2e02b}
+.console-title>span:last-child{margin-left:auto;font-size:9px;color:#78a7ae;white-space:nowrap}
+.console-lamp{width:8px;height:8px;border-radius:100%;background:#65efc9;box-shadow:0 0 15px #65efc9;flex:none;animation:blinker 2s infinite}
+.console-intro{font:700 clamp(20px,2.1vw,29px)/1.18 "Space Grotesk";letter-spacing:-.045em;padding:20px 0 17px}.console-intro span{color:var(--teal)}
+.console-system{display:flex;gap:12px;align-items:center;padding:12px 0;border-top:1px solid #99dad51d}
+.console-system>div{min-width:0;flex:1}.console-system strong{display:block;color:#eaf5f5;font-size:13px;line-height:1.35}.console-system small{display:block;color:#8ba8ac;font-size:11px}
+.system-icon{display:flex;width:33px;height:33px;align-items:center;justify-content:center;color:#78e7e2;background:#4dd9ca14;border:1px solid #5ed3d338;border-radius:10px}
+.system-dot{width:6px;height:6px;border-radius:50%;background:#72eac4;box-shadow:0 0 8px #43c8a7;margin-right:3px}
+.console-end{display:flex;justify-content:space-between;gap:8px;border-top:1px solid #99dad533;padding-top:16px;color:#77d9cc;font:700 9px "Space Grotesk";letter-spacing:.04em}
+@keyframes scene-arrive{from{transform:scale(1.09);opacity:.3}to{transform:scale(1.035);opacity:1}}
+@keyframes console-glow{50%{box-shadow:0 25px 80px #0007,0 0 30px #1fc8b217}}
+@media(max-width:1150px){.hero{grid-template-columns:1fr .84fr;gap:28px;padding-inline:28px}.hero .stats{grid-template-columns:repeat(2,minmax(0,1fr))}.hero:before{background-size:auto 100%;background-position:center}}
+@media(max-width:800px){.hero{grid-template-columns:1fr;min-height:0;padding:75px 24px 60px;gap:35px}.hero:before{background-size:auto 100%;background-position:65% center}.hero:after{background:linear-gradient(90deg,#040c10ed,#040c1099),linear-gradient(0deg,#040c10e8,transparent)}.hero-console{justify-self:stretch;max-width:100%}.hero .stats{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:540px){.hero{padding:62px 20px 52px;gap:28px}.hero h1{font-size:clamp(42px,10.5vw,60px)}.hero .lead{font-size:15px}.hero .stats{grid-template-columns:repeat(2,minmax(0,1fr))}.hero .stat strong{font-size:29px}.hero-console{padding:17px}.console-title{font-size:9px}.console-title>span:last-child,.console-end{font-size:8px}}
+@media(prefers-reduced-motion:reduce){.hero:before,.hero-console,.console-lamp{animation:none!important}}
+
 </style>
 <meta content="Mario Paolantonio | Full Stack Engineer — Industrial Software" property="og:title"/><meta content="Four production systems, full-stack software and industrial business impact." property="og:description"/><meta content="website" property="og:type"/><meta content="https://mariopao14.github.io/assets/portfolio.jpg" property="og:image"/><meta content="index, follow" name="robots"/><link href="https://mariopao14.github.io/" rel="canonical"/></head>
 <body>
@@ -106,7 +137,7 @@ body:after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;back
 <main class="wrap" id="top">
 <section class="hero">
 <div data-reveal="">
-<div class="overline">FULL STACK SOFTWARE ENGINEER · INDUSTRIAL SYSTEMS · SAP B1</div>
+<div class="overline">FULL STACK SOFTWARE ENGINEER · ENTERPRISE SYSTEMS · SAP B1</div>
 <h1>Production-ready software <em>with business impact.</em></h1>
 <p class="lead">I build real-world applications that streamline operations, improve visibility, and connect teams with the data they need — from supplier onboarding and hazardous materials control to field reporting and manufacturing execution.</p>
 <div class="actions">
@@ -120,10 +151,14 @@ body:after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;back
 <div class="stat"><strong>SAP</strong><small>end-to-end integration experience</small></div>
 </div>
 </div>
-<div class="hero-card" data-reveal="">
-<img alt="Industrial software portfolio overview" src="assets/portfolio.jpg"/>
-<div class="hero-badge"><b>Industrial software portfolio</b> Mocked interfaces below are high-fidelity visual reconstructions created with fictional data.</div>
-<div class="hero-float"><span><b>Supplier Onboarding</b> <i>online</i></span><span><b>Hazardous Inventory</b> <i>online</i></span><span><b>Field Reporting</b> <i>online</i></span><span><b>MES Plant System</b> <i>online</i></span></div>
+<div class="hero-console" data-reveal="" aria-label="Production systems">
+  <div class="console-title"><span class="console-lamp" aria-hidden="true"></span> SOFTWARE × OPERATIONS <span>CONCEPT VISUAL</span></div>
+  <div class="console-intro">From operational challenges <span>to deployed systems.</span></div>
+  <div class="console-system"><span class="system-icon" aria-hidden="true">◈</span><div><strong>Supplier Onboarding</strong><small>Administrative workflows</small></div><span class="system-dot" title="In production"></span></div>
+  <div class="console-system"><span class="system-icon" aria-hidden="true">⬡</span><div><strong>Hazardous Inventory</strong><small>Movement traceability</small></div><span class="system-dot" title="In production"></span></div>
+  <div class="console-system"><span class="system-icon" aria-hidden="true">◇</span><div><strong>Field Sales Reporting</strong><small>Incidents and follow-up</small></div><span class="system-dot" title="In production"></span></div>
+  <div class="console-system"><span class="system-icon" aria-hidden="true">▥</span><div><strong>Manufacturing MES</strong><small>Plant operations</small></div><span class="system-dot" title="In production"></span></div>
+  <div class="console-end"><span>04 SYSTEMS DEPLOYED</span><span>REAL BUSINESS IMPACT ↗</span></div>
 </div>
 </section><div aria-label="Industrial signal visual" class="industrial-status"><div class="plant-pill"><span class="live-dot"></span> ENGINEERING / DEPLOYED SYSTEMS <b>04</b></div><div aria-hidden="true" class="conveyor"><span class="conveyor-line"></span><span class="conveyor-box"></span><span class="conveyor-box"></span><span class="conveyor-box"></span><span class="conveyor-box"></span></div></div>
 <section id="projects">
